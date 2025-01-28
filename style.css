@@ -62,12 +62,14 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
-  grid-template-rows: auto auto;
+  grid-template-rows: repeat(5, auto);
 }
 
 .item {
+  grid-row: span 5;
   display: grid;
-  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  position: relative;
 }
 
 /* PRODUKT  */
@@ -134,36 +136,38 @@ a:hover {
 
 .discount {
   position: absolute;
-  top: 60%;
-  left: 47%;
+  top: 55%;
+  left: 88%;
   transform: translate(-50%, -50%);
   text-align: center;
   background-color: #b46e7d;
   width: 42px;
+  color: white;
 }
 
 .discount_tekst {
   font-family: "Anton", serif;
 }
 
-.discount2 {
+/* SOLD OUT */
+
+.sold_out {
   position: absolute;
-  top: 60%;
-  left: 88.5%;
+  top: 6%;
+  left: 10%;
   transform: translate(-50%, -50%);
   text-align: center;
   background-color: #b46e7d;
   width: 42px;
+  color: white;
 }
 
-.discount_tekst2 {
+.sold_out_tekst {
   font-family: "Anton", serif;
 }
 
-/* SOLD OUT */
-
-.sold_out {
-}
-
 .sold_out_img {
+  position: relative;
+  opacity: 0.5;
+  filter: grayscale(100%);
 }
