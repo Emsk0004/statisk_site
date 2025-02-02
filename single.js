@@ -31,10 +31,20 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
                 <h1>${data.productdisplayname}</h1>
             
                 <p>${data.brandname}</p>
-            
-                <h3>Choose a size
-                    <button>S</button>
-                </h3>
+    
+
+                <div class="form-felt">
+                <label>
+                 <h3>Choose a size</h3>
+                <select name="liste">
+                <option value="">Vælg størrelse</option>
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+                <option value="XL">X-large</option>
+                </select>
+                </label>
+                </div>
             
             
                 <button>Add to basket</button>
