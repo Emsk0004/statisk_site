@@ -8,6 +8,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${myproduct}`)
 
             <div>
                 <img src="https://kea-alt-del.dk/t7/images/webp/640/${myproduct}.webp" alt="tshirt">
+                <div class="discount2 ${!data.discount && "hide"}">${data.discount}%</div>
             </div>
             
             <div>
@@ -18,6 +19,11 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${myproduct}`)
             
                 <h2>Color</h2>
                 <p>${data.colour1}</p>
+
+                <h2>Price</h2>
+
+                <p class= "pris_produkt_før ${!data.discount && "hide"}">${Math.round(data.price * (1 - data.discount / 100))},-</p>
+                <p class="${data.discount && "foer_pris"}" >${data.price},-</p>
             
                 <h2>Inventory number</h2>
                 <p>${data.id}</p>

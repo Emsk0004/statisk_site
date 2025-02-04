@@ -14,13 +14,16 @@ function showList(products) {
     .map(
       (product) => `
             <div class="item">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="T-shirt">
+                <img class="${product.soldout && "sold_out_img"}" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="T-shirt">
                 <h2>${product.productdisplayname}</h2>
                 <h3>${product.brandname}</h3>
                 <div class="price">
-                    <p>${product.price},-</p>
+                    <p class="${product.discount && "foer_pris"}" >${product.price},-</p>
+                    <p class= "pris_produkt_før ${!product.discount && "hide"}">Nypris ${Math.round(product.price * (1 - product.discount / 100))},-</p>
                 </div>
                 <a href="produkt.html?id=${product.id}">Read more</a>
+                <div class="discount ${!product.discount && "hide"}">${product.discount}%</div>
+                <div class="sold_out ${!product.soldout && "hide"}">Sold out</div>
             </div>`
     )
     .join("");
