@@ -145,8 +145,24 @@ a:hover {
   color: white;
 }
 
+.discount2 {
+  position: absolute;
+  top: 22%;
+  left: 12%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #b46e7d;
+  width: 42px;
+  color: white;
+}
+
 .discount_tekst {
   font-family: "Anton", serif;
+}
+
+.foer_pris {
+  text-decoration: line-through;
+  color: grey;
 }
 
 /* SOLD OUT */
@@ -170,4 +186,8 @@ a:hover {
   position: relative;
   opacity: 0.5;
   filter: grayscale(100%);
+}
+
+.hide {
+  display: none;
 }
